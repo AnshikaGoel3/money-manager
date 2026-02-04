@@ -11,8 +11,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/dashboard")
-
+@RequestMapping({"/api/auth", "/auth"})
 public class DashboardController {
 
     private final DashboardService dashboardService;
