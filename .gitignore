@@ -1,0 +1,18 @@
+# Backend
+money-manager-backend/target/
+money-manager-backend/.env
+
+# Frontend
+money-manager-frontend/node_modules/
+money-manager-frontend/dist/
+
+# Env files
+.env
+.env.*
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
