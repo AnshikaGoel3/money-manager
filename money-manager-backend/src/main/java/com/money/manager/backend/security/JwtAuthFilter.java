@@ -24,10 +24,10 @@ public class JwtAuthFilter extends OncePerRequestFilter {
         this.jwtUtil = jwtUtil;
     }
 
-    // ✅ Skip auth endpoints
+    // Skip JWT check for auth endpoints
     @Override
     protected boolean shouldNotFilter(HttpServletRequest request) {
-        return request.getRequestURI().startsWith("/api/auth/");
+        return request.getServletPath().startsWith("/api/auth/");
     }
 
     @Override
@@ -47,7 +47,6 @@ public class JwtAuthFilter extends OncePerRequestFilter {
         try {
             String token = authHeader.substring(7);
 
-            // ✅ Validate token first
             if (!jwtUtil.validateToken(token)) {
                 filterChain.doFilter(request, response);
                 return;
@@ -55,7 +54,8 @@ public class JwtAuthFilter extends OncePerRequestFilter {
 
             String email = jwtUtil.extractEmail(token);
 
-            if (email != null && SecurityContextHolder.getContext().getAuthentication() == null) {
+            if (email != null &&
+                SecurityContextHolder.getContext().getAuthentication() == null) {
 
                 UsernamePasswordAuthenticationToken authentication =
                         new UsernamePasswordAuthenticationToken(
