@@ -2,7 +2,8 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'http://localhost:8080/api', // MUST include /api for your JwtAuthFilter
+  baseURL: 'https://money-manager-backend1.onrender.com'
+  //'http://localhost:8080/api', // MUST include /api for your JwtAuthFilter
 });
 
 API.interceptors.request.use((config) => {
