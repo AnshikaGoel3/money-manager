@@ -34,7 +34,8 @@ public class SecurityConfig {
                 // ADD BOTH LOCAL + PRODUCTION FRONTEND URLS
                 config.setAllowedOrigins(List.of(
                         "http://localhost:5173",
-                        "https://money-manager-frontend-pi.vercel.app"
+                        "https://money-manager-frontend-pi.vercel.app",
+                        "https://money-manager-frontend-5r0zw5h43-anshikagoel3s-projects.vercel.app"
                 ));
 
                 config.setAllowedMethods(List.of(
