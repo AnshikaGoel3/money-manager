@@ -12,6 +12,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
 public class SecurityConfig {
+
     private final JwtAuthFilter jwtAuthFilter;
 
     public SecurityConfig(JwtAuthFilter jwtAuthFilter) {
@@ -29,9 +30,20 @@ public class SecurityConfig {
         http
             .cors(cors -> cors.configurationSource(request -> {
                 CorsConfiguration config = new CorsConfiguration();
-                config.setAllowedOrigins(List.of("http://localhost:5173"));
-                config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+
+                // ADD BOTH LOCAL + PRODUCTION FRONTEND URLS
+                config.setAllowedOrigins(List.of(
+                        "http://localhost:5173",
+                        "https://money-manager-frontend-pi.vercel.app"
+                ));
+
+                config.setAllowedMethods(List.of(
+                        "GET", "POST", "PUT", "DELETE", "OPTIONS"
+                ));
+
                 config.setAllowedHeaders(List.of("*"));
+                config.setAllowCredentials(true); // important for Authorization header
+
                 return config;
             }))
             .csrf(csrf -> csrf.disable())
@@ -39,12 +51,13 @@ public class SecurityConfig {
                 .requestMatchers("/api/auth/**").permitAll()
                 .anyRequest().authenticated()
             )
-            .addFilterBefore(jwtAuthFilter, 
-                    org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter.class)
+            .addFilterBefore(
+                jwtAuthFilter,
+                org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter.class
+            )
             .httpBasic(httpBasic -> httpBasic.disable())
             .formLogin(formLogin -> formLogin.disable());
 
         return http.build();
     }
-
 }
