@@ -40,9 +40,9 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
 
-        config.setAllowedOrigins(List.of(
+        config.setAllowedOriginPatterns(List.of(
             "http://localhost:5173",
-            "https://money-manager-frontend-5ozr73s93-anshikagoel3s-projects.vercel.app"
+            "https://money-manager-frontend-*.vercel.app"
         ));
 
         config.setAllowedMethods(List.of(
@@ -58,6 +58,7 @@ public class SecurityConfig {
 
         return source;
     }
+
 
     @Bean
     public PasswordEncoder passwordEncoder() {
