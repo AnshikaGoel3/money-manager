@@ -1,4 +1,4 @@
-# 💰 Money Manager – Full Stack Application
+#  Money Manager – Full Stack Application
 
 A modern **Money Management Web Application** that helps users track **income, expenses, categories, and financial summaries** securely using **JWT authentication**.
 
@@ -6,7 +6,7 @@ Built with **React + Spring Boot + MongoDB**, deployed on **Vercel & Render**.
 
 ---
 
-## 🚀 Live Demo
+##  Live Demo
 
 - **Frontend (Vercel):**  
   https://money-manager-frontend-pi.vercel.app
@@ -16,7 +16,7 @@ Built with **React + Spring Boot + MongoDB**, deployed on **Vercel & Render**.
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 ### Frontend
 - React (Vite)
@@ -35,7 +35,7 @@ Built with **React + Spring Boot + MongoDB**, deployed on **Vercel & Render**.
 
 ---
 
-## ✨ Features
+##  Features
 
 ### 🔐 Authentication
 - User Registration
@@ -62,7 +62,7 @@ Built with **React + Spring Boot + MongoDB**, deployed on **Vercel & Render**.
 
 ---
 
-## 🧩 Application Flow
+##  Application Flow
 
 1. User registers or logs in
 2. Backend returns a **JWT token**
@@ -94,19 +94,19 @@ GET /api/dashboard/summary
 
 ## 🖼️ Screenshots
 
-### 🔐 Login Page
+###  Login Page
 <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/108ec9d7-2c34-47a2-a2bb-1b501cb005f3" />
 
 
-### 📝 Register Page
+###  Register Page
 <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/964c6614-83cc-4eb3-bcc7-9a26ed76975d" />
 
 
-### 📊 Dashboard
+###  Dashboard
 <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/b70b6089-9d17-4b73-984f-3e88610a14b8" />
 
 
-### 💰 Add Transaction
+###  Add Transaction
 <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/9fd4b072-728b-46d0-8d23-1cf3d5b17c98" />
 
 
@@ -153,7 +153,7 @@ money-manager/
 
 ---
 
-## 🧠 Key Learnings
+##  Key Learnings
 
 - Implemented **JWT Authentication** from scratch
 - Integrated **Spring Security filter chain**
